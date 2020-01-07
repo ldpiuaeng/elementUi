@@ -19,10 +19,12 @@ function hasPermission(roles, route) {
  * @param roles
  */
 export function filterAsyncRoutes(routes, roles) {
+  debugger
   const res = []
 
   routes.forEach(route => {
     const tmp = { ...route }
+    debugger
     if (hasPermission(roles, tmp)) {
       if (tmp.children) {
         tmp.children = filterAsyncRoutes(tmp.children, roles)

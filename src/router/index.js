@@ -74,7 +74,44 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: 'Dashboard', icon: 'edit', affix: true }
+        // children: [
+        //   {
+        //     path: 'dashboard',
+        //     component: () => import('@/views/dashboard/index'),
+        //     meta: { title: '1', icon: 'dashboard', affix: true }
+        //   },
+        //   {
+        //     path: '/404',
+        //     component: () => import('@/views/dashboard/index'),
+        //     meta: { title: '2', icon: 'icon', affix: true }
+        //   }
+        // ]
+      }
+    ]
+  },
+  {
+    path: '/icon',
+    component: Layout,
+    meta: { title: 'haha', icon: 'dashboard', affix: true },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/dashboard/index'),
+        name: 'Icons',
+        meta: { title: 'Icons', icon: 'icon', noCache: true },
+        children: [
+            {
+              path: 'dashboard',
+              component: () => import('@/views/dashboard/index'),
+              meta: { title: '1', icon: 'dashboard', affix: true }
+            },
+            {
+              path: '/404',
+              component: () => import('@/views/dashboard/index'),
+              meta: { title: '2', icon: 'icon', affix: true }
+            }
+          ]
       }
     ]
   }
